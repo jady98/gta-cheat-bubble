@@ -10,6 +10,7 @@ import android.provider.Settings;
 import android.view.Gravity;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,16 +22,13 @@ public class MainActivity extends Activity {
         LinearLayout root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
         root.setGravity(Gravity.CENTER_HORIZONTAL);
-        root.setPadding(dp(22), dp(28), dp(22), dp(24));
+        root.setPadding(dp(22), dp(20), dp(22), dp(24));
         root.setBackgroundColor(Color.rgb(15, 16, 24));
 
-        TextView emblem = new TextView(this);
-        emblem.setText("J");
-        emblem.setTextSize(64);
-        emblem.setTextColor(Color.rgb(190, 137, 255));
-        emblem.setTypeface(null, Typeface.BOLD);
-        emblem.setGravity(Gravity.CENTER);
-        root.addView(emblem, new LinearLayout.LayoutParams(-1, dp(90)));
+        ImageView cover = new ImageView(this);
+        cover.setImageResource(R.drawable.ic_launcher);
+        cover.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        root.addView(cover, new LinearLayout.LayoutParams(-1, dp(190)));
 
         TextView title = new TextView(this);
         title.setText("JADYKEYS");
