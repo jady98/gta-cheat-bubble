@@ -25,16 +25,17 @@ public class MainActivity extends Activity {
         root.setBackgroundColor(Color.rgb(15, 16, 24));
 
         TextView emblem = new TextView(this);
-        emblem.setText("⌨");
-        emblem.setTextSize(58);
+        emblem.setText("J");
+        emblem.setTextSize(64);
         emblem.setTextColor(Color.rgb(190, 137, 255));
+        emblem.setTypeface(null, Typeface.BOLD);
         emblem.setGravity(Gravity.CENTER);
         root.addView(emblem, new LinearLayout.LayoutParams(-1, dp(90)));
 
         TextView title = new TextView(this);
-        title.setText("GTA HACKER\nKEYBOARD");
+        title.setText("JADYKEYS");
         title.setTextColor(Color.WHITE);
-        title.setTextSize(28);
+        title.setTextSize(30);
         title.setTypeface(null, Typeface.BOLD);
         title.setGravity(Gravity.CENTER);
         root.addView(title);
@@ -48,14 +49,14 @@ public class MainActivity extends Activity {
         root.addView(subtitle);
 
         TextView description = new TextView(this);
-        description.setText("Un teclado de estilo oscuro creado para tener tus códigos de GTA a mano y escribir con comodidad.");
+        description.setText("Tu teclado gamer con accesos rápidos a los códigos de GTA San Andreas.");
         description.setTextColor(Color.rgb(210, 212, 222));
         description.setTextSize(15);
         description.setGravity(Gravity.CENTER);
         description.setPadding(dp(8), dp(10), dp(8), dp(24));
         root.addView(description);
 
-        Button settings = makeButton("1. ACTIVAR TECLADO GTA");
+        Button settings = makeButton("1. ACTIVAR TECLADO JADYKEYS");
         root.addView(settings, fullWidth());
         settings.setOnClickListener(v -> startActivity(new Intent(Settings.ACTION_INPUT_METHOD_SETTINGS)));
 
@@ -75,7 +76,7 @@ public class MainActivity extends Activity {
         });
 
         TextView note = new TextView(this);
-        note.setText("\nNota: el teclado solo puede escribir en aplicaciones o juegos que acepten entrada de teclado. La burbuja requiere permiso para mostrarse encima de otras aplicaciones.");
+        note.setText("\nAviso: los accesos rápidos escriben en campos que aceptan teclado. GTA San Andreas puede no aceptar códigos enviados por un teclado Android.");
         note.setTextColor(Color.rgb(150, 153, 166));
         note.setTextSize(12);
         note.setGravity(Gravity.CENTER);
