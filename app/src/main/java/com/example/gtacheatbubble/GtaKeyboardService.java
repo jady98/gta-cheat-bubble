@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.Gravity;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
