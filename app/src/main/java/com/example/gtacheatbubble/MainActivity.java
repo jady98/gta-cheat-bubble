@@ -2,56 +2,51 @@ package com.example.gtacheatbubble;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    private static final int OVERLAY_REQUEST = 44;
-
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LinearLayout root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
-        root.setPadding(28, 36, 28, 28);
+        root.setPadding(24, 30, 24, 24);
 
         TextView title = new TextView(this);
-        title.setText("GTA Cheat Bubble\n\nPermite mostrar una burbuja encima de otras aplicaciones. La app solo copia códigos: no puede inyectarlos directamente en GTA.");
+        title.setText("GTA HACKER KEYBOARD\n\nTeclado QWERTY con botones de trucos. Actívalo en Android y selecciónalo cuando GTA permita abrir el teclado.");
         title.setTextSize(18);
         root.addView(title);
 
-        Button permission = new Button(this);
-        permission.setText("1. Permitir mostrar sobre otras apps");
-        root.addView(permission);
-        permission.setOnClickListener(v -> {
+        Button settings = new Button(this);
+        settings.setText("1. Activar GTA Hacker Keyboard");
+        root.addView(settings);
+        settings.setOnClickListener(v -> startActivity(new Intent(Settings.ACTION_INPUT_METHOD_SETTINGS)));
+
+        Button picker = new Button(this);
+        picker.setText("2. Elegir teclado GTA");
+        root.addView(picker);
+        picker.setOnClickListener(v -> ((InputMethodManager)getSystemService(INPUT_METHOD_SERVICE)).showInputMethodPicker());
+
+        Button overlay = new Button(this);
+        overlay.setText("Permitir burbuja flotante");
+        root.addView(overlay);
+        overlay.setOnClickListener(v -> {
             if (!Settings.canDrawOverlays(this)) {
-                Intent i = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                    Uri.parse("package:" + getPackageName()));
-                startActivityForResult(i, OVERLAY_REQUEST);
-            } else startBubble();
+                startActivity(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                    android.net.Uri.parse("package:" + getPackageName())));
+            } else {
+                startService(new Intent(this, BubbleService.class));
+            }
         });
 
-        Button start = new Button(this);
-        start.setText("2. Activar burbuja");
-        root.addView(start);
-        start.setOnClickListener(v -> {
-            if (Settings.canDrawOverlays(this)) startBubble();
-            else permission.performClick();
-        });
-
-        Button stop = new Button(this);
-        stop.setText("Cerrar burbuja");
-        root.addView(stop);
-        stop.setOnClickListener(v -> stopService(new Intent(this, BubbleService.class)));
-
+        TextView note = new TextView(this);
+        note.setText("\nImportante: el teclado envía pulsaciones reales al campo o juego que tenga el foco. Si GTA 2.11.311 no abre/acepta entrada de teclado, ninguna app de teclado puede forzarlo sin modificar el juego o usar root.");
+        note.setTextSize(13);
+        root.addView(note);
         setContentView(root);
-    }
-
-    private void startBubble() {
-        startService(new Intent(this, BubbleService.class));
-        finish();
     }
 }
