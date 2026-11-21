@@ -46,8 +46,8 @@ public class BubbleService extends Service {
 
     private void showBubble() {
         TextView b = new TextView(this);
-        b.setText("GTA");
-        b.setTextColor(Color.WHITE); b.setTextSize(13); b.setTypeface(null, Typeface.BOLD);
+        b.setText("J");
+        b.setTextColor(Color.WHITE); b.setTextSize(23); b.setTypeface(null, Typeface.BOLD);
         b.setGravity(Gravity.CENTER); b.setBackground(bg(Color.rgb(112, 35, 190), 100));
         bubble = b;
         bubbleParams = params(58, 58, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
@@ -82,7 +82,7 @@ public class BubbleService extends Service {
         box.setBackground(bg(Color.rgb(24,27,38), 24));
 
         TextView heading = new TextView(this);
-        heading.setText("GTA CHEATS  •  COPIAR CÓDIGO");
+        heading.setText("JADYKEYS  •  TRUCOS GTA");
         heading.setTextColor(Color.WHITE); heading.setTextSize(14);
         box.addView(heading);
 
@@ -106,7 +106,7 @@ public class BubbleService extends Service {
         box.addView(actions);
 
         TextView note = new TextView(this);
-        note.setText("Copiar no activa el truco por sí solo. GTA debe admitir entrada de códigos.");
+        note.setText("Los códigos se copian; el juego debe aceptar entrada de teclado para activarlos.");
         note.setTextColor(Color.LTGRAY); note.setTextSize(11);
         box.addView(note);
 
