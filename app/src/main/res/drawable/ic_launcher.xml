@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#080510" android:pathData="M0,0h108v108h-108z"/>
+    <path android:fillColor="#241039" android:pathData="M7,7h94v94h-94z"/>
+    <path android:fillColor="#3C1B5D" android:pathData="M10,10h88v88h-88z"/>
+    <path android:fillColor="#160D25" android:pathData="M14,14h80v80h-80z"/>
+    <!-- keyboard body, angled in perspective -->
+    <path android:fillColor="#08070D" android:pathData="M13,62 L88,55 L99,83 L24,94 Z"/>
+    <path android:fillColor="#6F3B99" android:pathData="M13,62 L88,55 L99,83 L24,94 Z"/>
+    <path android:fillColor="#21152E" android:pathData="M17,64 L86,58 L94,80 L26,89 Z"/>
+    <!-- raised purple keys -->
+    <path android:fillColor="#C78BFF" android:pathData="M22,66l8,-1 2,5 -8,1z M34,65l8,-1 2,5 -8,1z M46,64l8,-1 2,5 -8,1z M58,63l8,-1 2,5 -8,1z M70,62l8,-1 2,5 -8,1z M82,61l7,-1 2,5 -7,1z"/>
+    <path android:fillColor="#8F50C8" android:pathData="M25,74l9,-1 2,5 -9,1z M38,73l9,-1 2,5 -9,1z M51,72l9,-1 2,5 -9,1z M64,71l9,-1 2,5 -9,1z M77,70l9,-1 2,5 -9,1z"/>
+    <path android:fillColor="#E8CFFF" android:pathData="M38,82l34,-3 2,5 -34,3z"/>
+    <!-- large metallic purple J -->
+    <path android:fillColor="#3C1761" android:pathData="M28,13h54v12h-10v34c0,20 -11,29 -30,29 -12,0 -21,-5 -27,-13l12,-11c4,5 8,7 14,7 9,0 13,-5 13,-14V25H28z"/>
+    <path android:fillColor="#B978F4" android:pathData="M25,10h54v10h-9v38c0,17 -9,25 -25,25 -10,0 -18,-4 -24,-11l9,-9c4,4 8,6 14,6 8,0 12,-4 12,-12V20H25z"/>
+    <path android:fillColor="#E9D5FF" android:pathData="M29,13h46v4H29z M29,13h4v7h-4z"/>
+    <path android:fillColor="#7136A2" android:pathData="M67,22h7v34c0,13 -6,20 -17,22 8,-5 10,-11 10,-22z"/>
+    <!-- lightning bolt splitting the keyboard -->
+    <path android:fillColor="#FFF4A8" android:pathData="M52,53 L68,48 L59,66 L71,63 L43,91 L50,71 L39,74 Z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M52,53 L62,50 L55,65 L64,63 L47,81 L52,68 L44,70 Z"/>
+</vector>
